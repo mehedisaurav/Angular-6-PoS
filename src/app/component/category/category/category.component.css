@@ -1,0 +1,22 @@
+table, th, td {
+    border: 1px solid #6b4c6d;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn-outline-dark:hover{
+    background-color: #6b4c6d;
+    border-color: #6b4c6d;
+    
+}
+
+.form-control {
+    background-color: #98b8e2;
+    border: 1px solid #6b4c6d;
+    color: black;
+}
+
+.card-header {
+    background-color: #6b4c6d;
+}
