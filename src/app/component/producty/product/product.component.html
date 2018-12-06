@@ -17,9 +17,59 @@
               <td>{{product.category}}</td>
               <td>{{product.price}}</td>
               <td>
-                <button type="button" class="btn btn-outline-dark btn-sm" >Edit</button>
+                <button type="button" class="btn btn-outline-dark btn-sm" (click)="getProduct(product)" >Edit</button>
               </td>
             </tr>
           </table>
     </div>
+    <div class="col-md-6">
+      <div class="card"  style="border: 1px solid #6b4c6d; background-color: #99b8e3">
+       <div class="card-header">               
+           <h3>Product Create</h3>
+       </div>
+         <div class="card-body">
+             <form  class="col-md-12 form-group" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                 <div class="form-group">
+                     <label for="productName">Product Name</label>
+                     <div>
+                       <input type="text" class="form-control" id="productName" formControlName="productName" placeholder="Product Name">
+                     </div>
+                   </div>
+                   <div class="form-group">
+                     <label for="categoryId">Category</label>
+                     <select id="categoryId" formControlName="categoryId" class="form-control">
+                      <option value="" disabled selected>Please Select </option> 
+                      <option *ngFor="let category of categoryDropList" [value]="category.categoryId">{{ category.categoryName }}</option>
+                    </select>
+                   </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="note">Quantity</label>
+                      <div>
+                        <input type="number" class="form-control" id="quantity" formControlName="quantity" placeholder="Quantity">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="note">Price</label>
+                      <div>
+                       <input type="number" class="form-control" id="price" formControlName="price" placeholder="Price">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="note">Measure/Size</label>
+                      <div>
+                        <input type="text" class="form-control" id="measure" formControlName="measure" placeholder="Measure">
+                      </div>
+                  </div>
+                   <div class="form-group">
+                       <button type="submit" [hidden]="isUpdate" class="btn btn-outline-success btn-sm">Save</button>
+                       <button type="submit" [hidden]="!isUpdate" class="btn btn-outline-primary btn-sm">Update</button>
+                       <button [hidden]="!isUpdate" class="btn btn-outline-danger btn-sm" (click)="cancleUpdate()" style="margin-left:3px">Cancel</button>
+                   </div>
+           </form>
+         </div>
+         
+      </div>
+   </div>
 </div>

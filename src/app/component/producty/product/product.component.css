@@ -15,4 +15,9 @@
     .form-control {
         background-color: #98b8e2;
         border: 1px solid #6b4c6d;
+        color: black;
+    }
+    
+    .card-header {
+        background-color: #6b4c6d;
     }
