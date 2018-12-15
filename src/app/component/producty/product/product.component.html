@@ -35,24 +35,39 @@
                        <input type="text" class="form-control" id="productName" formControlName="productName" placeholder="Product Name">
                      </div>
                    </div>
-                   <div class="form-group">
+                   <div class="form-group" >
                      <label for="categoryId">Category</label>
                      <select id="categoryId" formControlName="categoryId" class="form-control">
                       <option value="" disabled selected>Please Select </option> 
-                      <option *ngFor="let category of categoryDropList" [value]="category.categoryId">{{ category.categoryName }}</option>
+                      <option   *ngFor="let category of categoryDropList " [value]="category.categoryId">{{ category.categoryName }}</option>
                     </select>
-                   </div>
+                    <!-- <input type="text" id="keyword" class="form-control" [formControl]="queryField" placeholder="Search for artists..." autofocus/> -->
+                    <!-- <ul class="filter-select">
+                      <li *ngFor="let result of results" class="filter-select-list">
+                        {{result.categoryName}}
+                    <span class="tags" *ngFor='let genre of results'>{{genre.categoryName}}</span>
+                    </ul> -->
+                    <!-- <div class="static-container-dropdown">
+                      <diV class="static" *ngFor="let result of results">
+                          {{result.categoryName}}
+                      </diV>
+                    </div> -->
+
+                          <!-- <input id="typeahead-basic" type="text" class="form-control" (selectItem)="setModel($event)" 
+                          [ngbTypeahead]="search" [resultFormatter]="formatter" [inputFormatter]="format"/>
+                          -->
+                  </div>
                   <div class="row">
                     <div class="col-md-6">
                       <label for="note">Quantity</label>
                       <div>
-                        <input type="number" class="form-control" id="quantity" formControlName="quantity" placeholder="Quantity">
+                        <input type="number" min="0" class="form-control" id="quantity" formControlName="quantity" placeholder="Quantity">
                       </div>
                     </div>
                     <div class="col-md-6">
                         <label for="note">Price</label>
                       <div>
-                       <input type="number" class="form-control" id="price" formControlName="price" placeholder="Price">
+                       <input type="number" min="0" class="form-control" id="price" formControlName="price" placeholder="Price">
                       </div>
                     </div>
                   </div>
@@ -62,10 +77,10 @@
                         <input type="text" class="form-control" id="measure" formControlName="measure" placeholder="Measure">
                       </div>
                   </div>
-                   <div class="form-group">
+                   <div class="">
                        <button type="submit" [hidden]="isUpdate" class="btn btn-outline-success btn-sm">Save</button>
                        <button type="submit" [hidden]="!isUpdate" class="btn btn-outline-primary btn-sm">Update</button>
-                       <button [hidden]="!isUpdate" class="btn btn-outline-danger btn-sm" (click)="cancleUpdate()" style="margin-left:3px">Cancel</button>
+                       <button type="reset" [hidden]="!isUpdate" class="btn btn-outline-danger btn-sm" (click)="cancleUpdate()" style="margin-left:3px">Cancel</button>
                    </div>
            </form>
          </div>

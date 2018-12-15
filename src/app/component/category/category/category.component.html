@@ -43,7 +43,7 @@
                         <div class="form-group">
                             <button type="submit" [hidden]="isUpdate" class="btn btn-outline-success btn-sm">Save</button>
                             <button type="submit" [hidden]="!isUpdate" class="btn btn-outline-primary btn-sm">Update</button>
-                            <button [hidden]="!isUpdate" class="btn btn-outline-danger btn-sm" (click)="cancleUpdate()" style="margin-left:3px">Cancel</button>
+                            <button type="reset" [hidden]="!isUpdate" class="btn btn-outline-danger btn-sm" (click)="cancleUpdate()" style="margin-left:3px">Cancel</button>
                         </div>
                 </form>
               </div>

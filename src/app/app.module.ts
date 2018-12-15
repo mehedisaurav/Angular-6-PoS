@@ -8,21 +8,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from './services/category-service';
 import { ProductService } from './services/product-service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SaleComponent } from './component/sale/sale/sale.component';
+import { SaleService } from './services/sale-service';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    CategoryComponent
+    CategoryComponent,
+    SaleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgbModule
   ],
-  providers: [CategoryService, ProductService],
+  providers: [CategoryService, ProductService, SaleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
